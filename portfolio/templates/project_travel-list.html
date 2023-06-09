@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="main main--project">
+        <div>
+            <img
+                class="hero"
+                src="{{ url_for('static', filename=project['hero']) }}"
+                alt="Attraction page."
+            />
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+
+                    <p>
+                        Hi, I'm Chelsea! Traveling is an enriching experience that enables people to explore 
+                        new cultures and create unforgettable memories. As a traveler, I often find myself 
+                        needing a place to keep track of the attractions I have visited and share the 
+                        experiences I have had.
+                    </p>
+                    <p>
+                        The main goal of the Travel List website is to provide a user-friendly platform 
+                        where users can easily document their travel experiences. It allows users to create, 
+                        manage, and share their favorite travel destinations. It's built using Python with 
+                        Flask as the web framework, Jinja2 for templating HTML and CSS, and MongoDB as the 
+                        database to store trip information.
+                    </p>
+                    <p>
+                        The application provides features such as adding 
+                        new trips, editing trip details, searching for trips, and deleting trips. Users can 
+                        also add comments and rate the trips, making it a comprehensive platform for sharing 
+                        travel experiences and recommendations.
+                    </p>
+
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Technologies used</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                        </ul>
+                    </article>
+
+                    <a class="cta" href="{{ project['prod'] }}">
+                        <img class="cta__icon" src="{{ url_for('static', filename='img/pointer.svg') }}">
+                        View in production
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+{% endblock %}
